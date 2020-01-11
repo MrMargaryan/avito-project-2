@@ -1,0 +1,152 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, Helvetica Neue, Helvetica, sans-serif;
+}
+
+.container {
+    width: 80%;
+    margin: 20px auto;
+}
+
+.title {
+    text-align: center;
+}
+
+/* СПИСОК ФОТОГРАФИЙ */
+.images {
+    margin-top: 50px;
+    display: flex;
+    flex: 1 1 auto;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+}
+
+.image {
+    margin: 20px;
+    cursor: pointer;
+}
+
+/* МОДАЛЬНОЕ ОКНО */
+@media screen and (max-width: 620px) {
+    body {
+        overflow: hidden;
+    }
+
+    .modal {
+        width: 100vw !important;
+        height: 100vh !important;
+        display: flex !important;
+        flex-direction: column;
+    }
+
+    .modal-close {
+        position: fixed;
+        right: 0;
+    }
+
+    .modal-image {
+        width: 100% !important;
+        padding: 0 !important;
+    }
+
+    .comments {
+        order: 1;
+        padding-top: 30px !important;
+    }
+
+    .modal-form {
+        order: 2;
+    }
+}
+
+.modal-background {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    left: 0;
+    top: 0;
+    background-color: rgba(0, 0, 0, 0.7);
+}
+
+.modal {
+    position: fixed;
+    width: 619px;
+    height: 450px;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #fff;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+
+.modal-close {
+    grid-column: 2/3;
+    justify-self: right;
+    align-self: center;
+    font-size: 32px;
+    margin-right: 15px;
+    cursor: pointer;
+}
+
+.modal-image {
+    width: 331px;
+    height: auto;
+    padding: 0 30px;
+}
+
+.modal-form {
+    padding: 0 30px 30px 30px;
+    display: flex;
+    flex-direction: column;
+    grid-column: 1/2;
+}
+
+.modal-form * {
+    margin-top: 20px;
+    padding: 8px;
+}
+
+input[type = "text"] {
+    background: #FFFFFF;
+    border: 1px solid #CCCCCC;
+    box-sizing: border-box;
+    border-radius: 3px;
+}
+
+.add-comment {
+    background: #4997D0;
+    border-radius: 3px;
+    color: #fff;
+}
+
+.comments {
+    grid-row: 2/4;
+    grid-column: 2/3;
+    padding: 0 30px;
+    overflow: scroll;
+    word-break: break-word;
+}
+
+.comment {
+    margin-bottom: 20px;
+}
+
+.comment-date {
+    color: #999;
+    margin-bottom: 5px;
+}
+
+/* ФУТЕР */
+hr {
+    border: 1px solid #ccc;
+    margin-top: 150px;
+}
+
+.copyright {
+    color: #ccc;
+    text-align: center;
+    margin-top: 30px;
+}
