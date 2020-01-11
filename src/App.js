@@ -1,24 +1,28 @@
-import React from 'react';
-import logo from './logo.svg';
+import React, { useState } from 'react';
+import ImageList from "./components/ImageList";
+import Modal from './components/Modal';
 import './App.css';
 
-function App() {
+const App = () =>  {
+  const [modalId, setModalId] = useState();
+
+  const handleClick = (id) => {
+      setModalId(id);
+  }
+
+  const closeModal = () => {
+      setModalId();
+  }
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="container">
+        <h1 className="title">TEST APP</h1>
+        <ImageList handleClick={handleClick}/>
+        {
+            modalId ? <Modal id={modalId} closeModal={closeModal}/> : <noscript/>
+        }
+        <hr/>
+        <h4 className="copyright">&#9400; 2018-2019</h4>
     </div>
   );
 }
