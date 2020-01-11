@@ -30,10 +30,6 @@
 
 /* МОДАЛЬНОЕ ОКНО */
 @media screen and (max-width: 620px) {
-    body {
-        overflow: hidden;
-    }
-
     .modal {
         width: 100vw !important;
         height: 100vh !important;
